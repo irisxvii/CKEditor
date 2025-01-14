@@ -13,12 +13,13 @@ import {
 	Italic,
 	Link,
 	List,
+	Mention,
 	Paragraph,
 	Strikethrough,
 	TextTransformation,
 	Underline
 } from 'ckeditor5';
-import { Template } from 'ckeditor5-premium-features';
+import { MergeFields, Template } from 'ckeditor5-premium-features';
 
 import 'ckeditor5/ckeditor5.css';
 import 'ckeditor5-premium-features/ckeditor5-premium-features.css';
@@ -31,6 +32,9 @@ const LICENSE_KEY =
 const editorConfig = {
 	toolbar: {
 		items: [
+			'insertMergeField',
+			'previewMergeFields',
+			'|',
 			'heading',
 			'|',
 			'bold',
@@ -65,6 +69,8 @@ const editorConfig = {
 		Italic,
 		Link,
 		List,
+		Mention,
+		MergeFields,
 		Paragraph,
 		Strikethrough,
 		Template,
@@ -131,6 +137,19 @@ const editorConfig = {
 				}
 			}
 		}
+	},
+	mention: {
+		feeds: [
+			{
+				marker: '@',
+				feed: [
+					/* See: https://ckeditor.com/docs/ckeditor5/latest/features/mentions.html */
+				]
+			}
+		]
+	},
+	mergeFields: {
+		/* Read more: https://ckeditor.com/docs/ckeditor5/latest/features/merge-fields.html#configuration */
 	},
 	placeholder: 'Type or paste your content here!',
 	template: {
