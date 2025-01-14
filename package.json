@@ -5,8 +5,12 @@
     "start": "vite"
   },
   "devDependencies": {
-    "ckeditor5": "44.1.0",
+    "ckeditor5": "^44.1.0",
     "ckeditor5-premium-features": "44.1.0",
     "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^44.1.0",
+    "@ckeditor/ckeditor5-code-block": "^44.1.0"
   }
 }
